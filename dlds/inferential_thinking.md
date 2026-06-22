@@ -56,4 +56,28 @@ g = (endwert / startwert) - 1
 - die originale `produkt_tabelle` wird dadurch nicht verändert
 - s. 3.4 für weitere Tabellen-Methoden
 
-Lesezeichen: 4
+# 4 Datentypen
+- in Python gibt es nur 2 Zahlen-Typen: `int` & `float`
+- bei `float`-Zahlen werden nur die ersten 15 Ziffern beachtet, der Rest wird von Python ignoriert
+- Mit `float`s rechnen ist nicht exakt. Rundungsfehler sind oft verwirrend, wenn man ihnen zum ersten Mal begegnet.
+- ein String kann ein Wort, ein Satz, ein ganzes Buch sein
+- die String-Methode `replace` ersetzt jedes Vorkommen eines Sub-Strings, Bsp.: `'hitchhiker'.replace('hi', 'ma')` -> `'matchmaker'`
+
+# 5 Sequences
+- = eine Sammlung/Gruppe von `values`
+- diese `collection` können wir dann zB an eine Funktion übergeben
+
+## Arrays
+- Array = Reihe, Anordnung
+- Arrays können nicht verschiedene Datentypen enthalten
+- man kann Arrays mit Zahlen addieren/multiplizieren
+    - bei der Multiplikation wird zB jeder Eintrag des Arrays mit der Zahl multipliziert
+- `numpy` hat einen Haufen nützlicher Array-Funktionen (nicht Methoden)
+    - s. 5.1 für eine Übersicht der wichtigsten **<- bei Übungsaufgaben referenzieren**
+
+## Ranges
+- `range` = `array` von Zahlen in ab-/aufsteigender Reihenfolge; die Zahlen sind alle durch das gleiche Intervall voneinander getrennt
+- `np.arange` kann bis zu 3 Argumente nehmen: `start`, `end` & `step`
+    - wird nur 1 Argument gegeben, wird dies der `end`-Wert (es wird angenommen: `start=0`, `step=1`)
+    - bei 2 Argumenten: `start` & `end` (`step=1` angenommen)
+    - mit dem 3. Argument kann man `step` explizit einstellen
