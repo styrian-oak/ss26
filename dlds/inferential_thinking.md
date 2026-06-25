@@ -74,6 +74,10 @@ g = (endwert / startwert) - 1
     - bei der Multiplikation wird zB jeder Eintrag des Arrays mit der Zahl multipliziert
 - `numpy` hat einen Haufen nützlicher Array-Funktionen (nicht Methoden)
     - s. 5.1 für eine Übersicht der wichtigsten **<- bei Übungsaufgaben referenzieren**
+- mit `.item(Index)` kannst du auf ein Array-Element zugreifen
+- wenn 2 Ranges/Arrays gleich groß sind, kannst du zB `array1 - array2` berechnen:
+    - dabei wird elementweise subtrahiert
+    - das Ergebnis ist wieder ein Array
 
 ## Ranges
 - `range` = `array` von Zahlen in ab-/aufsteigender Reihenfolge; die Zahlen sind alle durch das gleiche Intervall voneinander getrennt
@@ -83,10 +87,6 @@ g = (endwert / startwert) - 1
     - mit dem 3. Argument kann man `step` explizit einstellen
     - `start` ist in der Range drin, `end` nicht (Python-Konvention)
     - die Argumente können auch negativ sein
-- mit `.item(Index)` kannst du auf ein Array-Element zugreifen
-- wenn 2 Ranges/Arrays gleich groß sind, kannst du zB `array1 - array2` berechnen:
-    - dabei wird elementweise subtrahiert
-    - das Ergebnis ist wieder ein Array
 
 # 6 Tabellen
 - eine Tabelle kann man aus 2 Perspektiven betrachten...
