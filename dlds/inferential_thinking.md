@@ -49,7 +49,7 @@ g = (endwert / startwert) - 1
 - mit `?` kannst du Hilfe über eine Funktion ausgeben, zB: `math.log?`
     - im Output bedeutet `[x]`, dass Argument `x` optional ist
 
-# Tabellen
+# Tabellen-Grdl.
 - Bsp. Tabellen-Methode: die ersten zwei Reihen anzeigen: `name_der_tabelle.show(2)`
 - *neue* Tabelle erstellen, die nur aus der Spalte `KundenID` besteht: `meine_tabelle.select('KundenID')`
 - neue Tabelle ohne die Spalte `Preis`: `produkt_tabelle.drop('Preis')`
@@ -81,3 +81,31 @@ g = (endwert / startwert) - 1
     - wird nur 1 Argument gegeben, wird dies der `end`-Wert (es wird angenommen: `start=0`, `step=1`)
     - bei 2 Argumenten: `start` & `end` (`step=1` angenommen)
     - mit dem 3. Argument kann man `step` explizit einstellen
+    - `start` ist in der Range drin, `end` nicht (Python-Konvention)
+    - die Argumente können auch negativ sein
+- mit `.item(Index)` kannst du auf ein Array-Element zugreifen
+- wenn 2 Ranges/Arrays gleich groß sind, kannst du zB `array1 - array2` berechnen:
+    - dabei wird elementweise subtrahiert
+    - das Ergebnis ist wieder ein Array
+
+# 6 Tabellen
+- eine Tabelle kann man aus 2 Perspektiven betrachten...
+- **jede Spalte einer** `table` **ist ein Array**
+
+## Funktionen/Methoden des datascience-Moduls
+- auf die Zelle in der 5. Spalte und 1. Zeile einer Tabelle zugreifen: `meine_tabelle.column(4).item(0)`
+- die Funktion `Table()` erstellt eine neue leere Tabelle
+- `Table().with_columns('meine Spalte', make_array(8, 34, 5))` erstellt eine Tabelle mit einer Spalte
+- die `with_columns`-Methode erstellt immer eine neue Tabelle, die ursprüngliche bleibt unverändert
+- *Kapitel 6 stellt noch mehr nützliche Methoden/Funktionen vor*
+
+---
+
+- die `help`-Funktion gibt Hilfe zu einer Funktion/Methode, zB: `help(meine_tabelle.sort)`
+- so etwas wie `descending=True` wird als benanntes Argument bezeichnet
+- im Gegensatz dazu ist das `True` bei `sort('SALARY', True)` ein sog. `positional argument`
+
+- mit `.take()` kannst du auf Zeilen anhand einer Range zugreifen, zB: `meine_tabelle.take(np.arange(3, 6))`
+- mit `.where()` kannst du nur die Zeilen anzeigen, die eine bestimmte Bedingung erfüllen
+- grds. Anwendung der `where`-Methode: `original_table_name.where(column_label_string, are.condition)`
+- s. 6.2.5 für eine Übersicht der `are`-Prädikate für `where()`
