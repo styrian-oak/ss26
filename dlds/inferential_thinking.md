@@ -114,4 +114,53 @@ g = (endwert / startwert) - 1
     - Deutung zB "0,96: auf 100 Jungen kommen 96 Mädchen"
     - "2: doppelt so viele Frauen wie Männer"
 
-Lesezeichen: 7
+# 7 Visualisierung
+- `gross` = brutto
+- **Variable** = (hier) Spalte, Attribut
+- quantitative Variable: Variable mit Zahlen-Werten
+- alle Methoden zur Visualisierung sind Tabellen-Methoden
+
+## Scatter-Plots
+- `scatter plot` = Streudiagramm
+- zeigt Beziehung zwischen zwei quantitativen Variablen
+- jede Zeile der Tabelle = 1 Punkt
+- `scatter`-Tabellen-Methode:
+
+```python
+name_tabelle.scatter(variable_für_x_achse, variable_y_achse)
+```
+
+- `"it slopes upwards"` = es verläuft nach oben
+- wenn der Plot nach oben verläuft, spricht man von einer positiven `association`
+    - ***im Allg.*** gehen hohe Werte der einen mit hohen Werten der anderen Variablen einher
+    - ...niedrige Werte der einen mit niedrigen Werten der anderen
+- Punkt, die außerhalb so eines Trends liegen, nennt man `outlier` (das stellt man einfach fest, indem man sich den Graph anschaut)
+- um so eine `association` zu verstehen, muss man die Variablen auch inhaltlich verstehen
+    - Bsp. C-3PO: die Variablen Produktionsbudget & Genre haben Einfluss auf die `association` zwischen 'Anzahl der Filme' und 'durchschnittliche Einnahmen pro Film'
+
+## Linien-Graphen
+- damit kann man gut chronologische Trends und Muster zeigen
+- `plot`-Methode funktioniert wie `.scatter()`
+
+## Visualisierung kategorialer Verteilungen
+- kategorial heißt nicht numerisch
+- kategorisieren = gruppieren
+- `distribution`: jedes Individuum gehört zu genau einer Kategorie und hat genau einen Wert
+
+### Balkendiagramm
+- `bar chart`
+- gut zur Darstellung kategorialer Verteilungen
+- 1 Balken pro Kategorie
+- Länge des Balkens ist **proportional** (s.u.) zur Häufigkeit der entsprechenden Kategorie
+
+```python
+name_tabelle.barh(spalte_mit_kategorien, spalte_mit_häufigkeiten)
+```
+
+#### Exkurs proportional
+- dh zwei Größen stehen immer im gleichen Verhältnis zueinander
+- Bsp. eine Kugel Eis kostet immer 2€
+- dann ist # Eis proportional zum Gesamt-Preis
+- proportional heißt also, dass sich die Größen synchron verändern
+
+Lesezeichen: 7.1.2
