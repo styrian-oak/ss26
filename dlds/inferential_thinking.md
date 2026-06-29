@@ -109,3 +109,9 @@ g = (endwert / startwert) - 1
 - mit `.where()` kannst du nur die Zeilen anzeigen, die eine bestimmte Bedingung erfüllen
 - grds. Anwendung der `where`-Methode: `original_table_name.where(column_label_string, are.condition)`
 - s. 6.2.5 für eine Übersicht der `are`-Prädikate für `where()`
+
+- s. 6.4.4: wie man zwei (Zahlen-)Spalten vergleicht, Stichwort: Verhältnis/`ratio`
+    - Deutung zB "0,96: auf 100 Jungen kommen 96 Mädchen"
+    - "2: doppelt so viele Frauen wie Männer"
+
+Lesezeichen: 7
