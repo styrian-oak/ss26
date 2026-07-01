@@ -132,9 +132,9 @@ name_tabelle.scatter(variable_für_x_achse, variable_y_achse)
 
 - `"it slopes upwards"` = es verläuft nach oben
 - wenn der Plot nach oben verläuft, spricht man von einer positiven `association`
-    - ***im Allg.*** gehen hohe Werte der einen mit hohen Werten der anderen Variablen einher
+    - dh **im Allg.** gehen hohe Werte der einen mit hohen Werten der anderen Variablen einher
     - ...niedrige Werte der einen mit niedrigen Werten der anderen
-- Punkt, die außerhalb so eines Trends liegen, nennt man `outlier` (das stellt man einfach fest, indem man sich den Graph anschaut)
+- Punkte, die außerhalb so eines Trends liegen, nennt man `outlier` (das stellt man einfach fest, indem man sich den Graph anschaut)
 - um so eine `association` zu verstehen, muss man die Variablen auch inhaltlich verstehen
     - Bsp. C-3PO: die Variablen Produktionsbudget & Genre haben Einfluss auf die `association` zwischen 'Anzahl der Filme' und 'durchschnittliche Einnahmen pro Film'
 
@@ -163,4 +163,41 @@ name_tabelle.barh(spalte_mit_kategorien, spalte_mit_häufigkeiten)
 - dann ist # Eis proportional zum Gesamt-Preis
 - proportional heißt also, dass sich die Größen synchron verändern
 
-Lesezeichen: 7.1.2
+### Kategorien erstellen
+- `group`-Tabellen-Methode
+- zählt Häufigkeit in jeder Kategorie
+
+```python
+meine_tabelle.group('Spalte mit Kategorien')
+```
+
+- `.group()` gibt neue Tabellen zurück: Verteilungs-Tabelle (`distribution`)
+- **Verteilungs-Tabelle**: zeigt wie sich die Individuen auf die Kategorien verteilen
+
+### Towards Quantitative Variables
+- Bsp.: wir wollen mit einem Balkendiagramm visualisieren, wie viele der Top 200 Filme pro Jahr erschienen sind (s. Kap. 7.1)
+- ...aber in manchen Jahren ist gar kein Top 200 Film erschienen
+- ...die Balken im Diagramm haben aber alle denselben Abstand (zB ist der Balken für 1921 direkt neben dem für 1937)
+- die Variable (Jahr-Achse) ist hier *nicht kategorial, sondern quantitativ*
+
+---
+
+- Bsp. kategoriale Variable (mit numerischem Code): `SEX` mit Ausprägungen `0`, `1` und `2`
+    - (`1` für männlich, `2` für weiblich, `0` für beide zusammen)
+
+## Binning
+- eine Variable in Abschnitte (Intervalle) einteilen
+- die `bin`-Methode funktioniert ähnlich wie `.group()`
+- erstellt eine Häufigkeits-Tabelle (mit # der Zeilen pro `bin`)
+- die 1. Spalte heißt `bin`
+    - sie enthält die Untergrenze des jeweiligen `bin`
+    - und die Obergrenze? s. die Zeile darunter
+    - *deshalb ist der Häufigkeits-Wert in der letzten Zeile immer 0* (keine Obergrenze)
+
+```python
+meine_tabelle.bin('Spalte, die in Intervalle eingeteilt werden soll', bins=np.arange(untergrenze_kleinster_bin, obergrenze_größter_bin, breite_der_bins))
+```
+
+- (für `untergrenze_kleinster_bin` und `obergrenze_größter_bin` bieten sich das Minimum und Maximum der Werte an)
+- wenn du `.bin()` keine Argumente gibst, produziert sie 10 gleich breite `bin`s
+- aber `bin`s müssen nicht gleich breit sein
